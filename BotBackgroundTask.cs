@@ -18,13 +18,13 @@ public class BotBackgroundTask : BackgroundService
     }
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-       var me = await botClient.GetMeAsync(stoppingToken);
-       logger.LogInformation("Bot {username} started", me.Username);
+        var me = await botClient.GetMeAsync(stoppingToken);
+        logger.LogInformation("Bot {username} started", me.Username);
 
-       botClient.StartReceiving(
-        updateHandler: updateHandler,
-        receiverOptions: default,
-        cancellationToken: stoppingToken
-       );
+        botClient.StartReceiving(
+         updateHandler: updateHandler,
+         receiverOptions: default,
+         cancellationToken: stoppingToken
+        );
     }
 }
