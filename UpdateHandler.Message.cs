@@ -51,6 +51,7 @@ public partial class UpdateHandler
                     cancellationToken: cancellationToken
                 );
             }
+            
             catch (Exception ex)
             {
                 await botClient.SendTextMessageAsync(
